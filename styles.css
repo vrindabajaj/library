@@ -4,6 +4,27 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: #3C3749;
+}
+
+.container {
+    margin: 0 15%;
+    padding: 50px;
+    border-left: solid 30px #C9CF8C;
+    border-right: solid 30px #C9CF8C;
+    min-height: 100vh;
+    background-color: #DEE4B8;
+}
+
+h1 {
+    font-family: "Unbounded", sans-serif;
+    font-weight: 600;
+    font-size: 4rem;
+    color: #54604f;
+    text-align: center;
+}
+
 .book {
     width: 200px;
     height: 200px;

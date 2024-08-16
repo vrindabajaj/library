@@ -6,23 +6,30 @@
     <title>My Library</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+</head>
 <body>
-    <button type="reset" form="book-info" class="add-book">Add book</button>
-    <div class="library-container"></div>
-    <div class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <form id="book-info" class="book-info">
-                <label for="title">Title</label><br>
-                <input type="text" id="title" name="title"><br>
-                <label for="author">Author</label><br>
-                <input type="text" id="author" name="author"><br>
-                <label for="pages">Pages</label><br>
-                <input type="number" id="pages" name="pages"><br>
-                <label for="isRead">Have you read it?</label><br>
-                <input type="checkbox" id="isRead" name="read"><br>
-            </form>
-            <button class="form-submit">Add to library</button>
+    <div class="container">
+        <h1>MY LIBRARY</h1>
+        <button type="reset" form="book-info" class="add-book">Add book</button>
+        <div class="library-container"></div>
+        <div class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <form id="book-info" class="book-info">
+                    <label for="title">Title</label><br>
+                    <input type="text" id="title" name="title"><br>
+                    <label for="author">Author</label><br>
+                    <input type="text" id="author" name="author"><br>
+                    <label for="pages">Pages</label><br>
+                    <input type="number" id="pages" name="pages"><br>
+                    <label for="isRead">Have you read it?</label><br>
+                    <input type="checkbox" id="isRead" name="read"><br>
+                </form>
+                <button class="form-submit">Add to library</button>
+            </div>
         </div>
     </div>
 </body>
