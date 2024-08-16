@@ -6,15 +6,24 @@ const span = document.querySelector(".close");
 
 const myLibrary = [];
 
-function Book(title, author, pages, read) {
+function Book(title, author, pages, isRead) {
     this.title = title;
     this.author = author;
     this.pages = pages;
-    this.read = read;
+    this.isRead = isRead;
 }
 
-function addBookToLibrary(title, author, pages, read) {
-    myLibrary.push(new Book(title, author, pages, read));
+form_submit.addEventListener("click", () => {
+    let title = document.querySelector("#title").value;
+    let author = document.querySelector("#author").value;
+    let pages = document.querySelector("#pages").value;
+    let isRead = document.querySelector("#isRead").checked ? "Yes" : "No";
+    addBookToLibrary(title, author, pages, isRead);
+    modal.style.display = "none";
+})
+
+function addBookToLibrary(title, author, pages, isRead) {
+    myLibrary.push(new Book(title, author, pages, isRead));
     displayLibrary();
 }
 
@@ -30,7 +39,7 @@ function displayLibrary() {
             `Title: ${myLibrary[i].title}<br>
             Author: ${myLibrary[i].author}<br>
             Pages: ${myLibrary[i].pages}<br>
-            Read (Y/N): ${myLibrary[i].read}`;
+            Read yet? (Y/N): ${myLibrary[i].isRead}`;
         book.classList.add("book");
         library.appendChild(book);
     }
@@ -40,20 +49,9 @@ add_book.addEventListener("click", () => {
     modal.style.display = "block";
 })
 
-form_submit.addEventListener("click", () => {
-    let title = document.querySelector("#title").value;
-    let author = document.querySelector("#author").value;
-    let pages = document.querySelector("#pages").value;
-    let read = document.querySelector("#read").checked ? "Yes" : "No";
-    addBookToLibrary(title, author, pages, read);
-    modal.style.display = "none";
-})
-
 span.addEventListener("click", () => {
     modal.style.display = "none";
 })
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
+window.addEventListener("click", () => {
+    modal.style.display = "none";
+})
