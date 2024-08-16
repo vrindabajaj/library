@@ -8,7 +8,22 @@
     <script src="script.js" defer></script>
 <body>
     <button class="add-book">Add book</button>
-    <div class="library-container">
+    <div class="library-container"></div>
+    <div class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form class="book-info">
+                <label for="title">Title</label><br>
+                <input type="text" id="title" name="title"><br>
+                <label for="author">Author</label><br>
+                <input type="text" id="author" name="author"><br>
+                <label for="pages">Pages</label><br>
+                <input type="number" id="pages" name="pages"><br>
+                <label for="read">Have you read it?</label><br>
+                <input type="checkbox" id="read" name="read"><br>
+            </form>
+            <button class="form-submit">Add to library</button>
+        </div>
     </div>
 </body>
 </html>
