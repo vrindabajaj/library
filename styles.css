@@ -3,3 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.book {
+    width: 100px;
+    height: 100px;
+    background-color: darkkhaki;
+}
