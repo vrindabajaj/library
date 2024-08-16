@@ -19,6 +19,7 @@ function addBookToLibrary(title, author, pages, read) {
 }
 
 function displayLibrary() {
+    //Avoids duplication
     while (library.firstChild) { 
         library.removeChild(library.firstChild);
     }
@@ -43,8 +44,7 @@ form_submit.addEventListener("click", () => {
     let title = document.querySelector("#title").value;
     let author = document.querySelector("#author").value;
     let pages = document.querySelector("#pages").value;
-    //to-do: check checkbox values
-    let read = document.querySelector("#read").value;
+    let read = document.querySelector("#read").checked ? "Yes" : "No";
     addBookToLibrary(title, author, pages, read);
     modal.style.display = "none";
 })
