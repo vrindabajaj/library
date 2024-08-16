@@ -19,9 +19,11 @@ function addBookToLibrary(title, author, pages, read) {
 }
 
 function displayLibrary() {
-    for(let i = 0; i < myLibrary.length; i++){
-        console.log(myLibrary[i]);
+    while (library.firstChild) { 
+        library.removeChild(library.firstChild);
+    }
 
+    for(let i = 0; i < myLibrary.length; i++){
         const book = document.createElement("div");
         book.innerHTML =  
             `Title: ${myLibrary[i].title}<br>
