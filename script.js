@@ -3,8 +3,6 @@ const modal = document.querySelector(".modal");
 const add_book = document.querySelector(".add-book");
 const form_submit = document.querySelector(".form-submit");
 const span = document.querySelector(".close");
-// const book = document.createElement("div");
-// book.classList.add("book");
 
 const myLibrary = [];
 
@@ -23,6 +21,15 @@ function addBookToLibrary(title, author, pages, read) {
 function displayLibrary() {
     for(let i = 0; i < myLibrary.length; i++){
         console.log(myLibrary[i]);
+
+        const book = document.createElement("div");
+        book.innerHTML =  
+            `Title: ${myLibrary[i].title}<br>
+            Author: ${myLibrary[i].author}<br>
+            Pages: ${myLibrary[i].pages}<br>
+            Read (Y/N): ${myLibrary[i].read}`;
+        book.classList.add("book");
+        library.appendChild(book);
     }
 }
 
