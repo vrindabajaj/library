@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 <body>
-    <button class="add-book">Add book</button>
+    <button type="reset" form="book-info" class="add-book">Add book</button>
     <div class="library-container"></div>
     <div class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <form class="book-info">
+            <form id="book-info" class="book-info">
                 <label for="title">Title</label><br>
                 <input type="text" id="title" name="title"><br>
                 <label for="author">Author</label><br>

@@ -1,3 +1,11 @@
+const library = document.querySelector(".library-container");
+const modal = document.querySelector(".modal");
+const add_book = document.querySelector(".add-book");
+const form_submit = document.querySelector(".form-submit");
+const span = document.querySelector(".close");
+// const book = document.createElement("div");
+// book.classList.add("book");
+
 const myLibrary = [];
 
 function Book(title, author, pages, read) {
@@ -5,9 +13,6 @@ function Book(title, author, pages, read) {
     this.author = author;
     this.pages = pages;
     this.read = read;
-    this.info = function () {
-        return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`;
-    }
 }
 
 function addBookToLibrary(title, author, pages, read) {
@@ -21,29 +26,17 @@ function displayLibrary() {
     }
 }
 
-function getBook() {
-    let title = prompt("title?");
-    let author = prompt("author?");
-    let pages = prompt("pages?");
-    let read = prompt("read it? y/n");
-    addBookToLibrary(title, author, pages, read);
-
-}
-
-const library = document.querySelector(".library-container");
-const modal = document.querySelector(".modal");
-const add_book = document.querySelector(".add-book");
-const form_submit = document.querySelector(".form-submit");
-const span = document.querySelector(".close");
-// const book = document.createElement("div");
-// book.classList.add("book");
-
 add_book.addEventListener("click", () => {
     modal.style.display = "block";
 })
 
 form_submit.addEventListener("click", () => {
-    //create new Book object using form inputs and add to array + display
+    let title = document.querySelector("#title").value;
+    let author = document.querySelector("#author").value;
+    let pages = document.querySelector("#pages").value;
+    //to-do: check checkbox values
+    let read = document.querySelector("#read").value;
+    addBookToLibrary(title, author, pages, read);
     modal.style.display = "none";
 })
 
