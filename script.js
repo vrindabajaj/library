@@ -35,11 +35,44 @@ function displayLibrary() {
 
     for(let i = 0; i < myLibrary.length; i++){
         const book = document.createElement("div");
-        book.innerHTML =  
-            `<span>Title:</span> ${myLibrary[i].title}
-            <span>Author:</span> ${myLibrary[i].author}
-            <span>Pages:</span> ${myLibrary[i].pages}
-            <span>Read yet?:</span> ${myLibrary[i].isRead}`;
+
+        let readButtonText;
+        myLibrary[i].isRead == "Yes" ? readButtonText = "Unread" : readButtonText = "Read";
+
+        const title = document.createElement("div");
+        const author = document.createElement("div");
+        const pages = document.createElement("div");
+        const isRead = document.createElement("div");
+        title.innerHTML = `<span>Title:</span> ${myLibrary[i].title}`;
+        author.innerHTML = `<span>Author:</span> ${myLibrary[i].author}`;
+        pages.innerHTML = `<span>Pages:</span> ${myLibrary[i].pages}`;
+        isRead.innerHTML = `<span>Read?:</span> ${myLibrary[i].isRead}`;
+
+        const toggleRead = document.createElement("button");
+        toggleRead.textContent = readButtonText;
+        const removeBook = document.createElement("button");
+        removeBook.textContent = "Remove";
+
+        toggleRead.addEventListener("click", () => {
+            if (myLibrary[i].isRead == "Yes"){
+                myLibrary[i].isRead = "No";
+            } else {
+                myLibrary[i].isRead = "Yes";
+            }
+            displayLibrary();
+        })
+
+        removeBook.addEventListener("click", () => {
+            myLibrary.pop(i);
+            displayLibrary();
+        })
+
+        book.appendChild(title);
+        book.appendChild(author);
+        book.appendChild(pages);
+        book.appendChild(isRead);
+        book.appendChild(toggleRead);
+        book.appendChild(removeBook);
         book.classList.add("book");
         library.appendChild(book);
     }
@@ -53,7 +86,7 @@ span.addEventListener("click", () => {
     modal.style.display = "none";
 })
 window.addEventListener("click", (e) => {
-    if(e.target == modal){
+    if (e.target == modal){
         modal.style.display = "none";
     }
 })
