@@ -11,10 +11,14 @@ body {
 .container {
     margin: 0 15%;
     padding: 50px;
+    min-height: 100vh;
     border-left: solid 30px #C9CF8C;
     border-right: solid 30px #C9CF8C;
-    min-height: 100vh;
     background-color: #DEE4B8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
 }
 
 h1 {
@@ -25,10 +29,39 @@ h1 {
     text-align: center;
 }
 
+.add-book {
+    padding: 20px 40px;
+    font-family: "Unbounded", sans-serif;
+    font-size: 1.5em;
+    background-color: transparent;
+    border: none;
+}
+
+.add-book:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.library-container {
+    margin-top: 30px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-rows: repeat(auto-fill, 1fr);
+    grid-auto-flow: row;
+    gap: 20px;
+
+}
+
 .book {
-    width: 200px;
-    height: 200px;
-    background-color: darkkhaki;
+    padding: 30px 20px;
+    font-family: "Unbounded", sans-serif;
+    background-color: hsl(47, 100%, 91%);
+    border: 5px solid #CCAA5E;
+    border-radius: 10px;;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .modal {
