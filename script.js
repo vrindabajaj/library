@@ -35,10 +35,10 @@ function displayLibrary() {
 
     for(let i = 0; i < myLibrary.length; i++){
         const book = document.createElement("div");
-
+        
         let readButtonText;
-        myLibrary[i].isRead == "Yes" ? readButtonText = "Unread" : readButtonText = "Read";
-
+        myLibrary[i].isRead == "Yes" ? readButtonText = "Not finished" : readButtonText = "Finished";
+        
         const title = document.createElement("div");
         const author = document.createElement("div");
         const pages = document.createElement("div");
@@ -47,11 +47,15 @@ function displayLibrary() {
         author.innerHTML = `<span>Author:</span> ${myLibrary[i].author}`;
         pages.innerHTML = `<span>Pages:</span> ${myLibrary[i].pages}`;
         isRead.innerHTML = `<span>Read?:</span> ${myLibrary[i].isRead}`;
-
+        
+        const btnContainer = document.createElement("div");
+        btnContainer.classList.add("btn-container");
         const toggleRead = document.createElement("button");
+        toggleRead.classList.add("toggle-read");
         toggleRead.textContent = readButtonText;
-        const removeBook = document.createElement("button");
-        removeBook.textContent = "Remove";
+        const removeBook = document.createElement("div");
+        removeBook.classList.add("close");
+        removeBook.innerHTML = "&times;";
 
         toggleRead.addEventListener("click", () => {
             if (myLibrary[i].isRead == "Yes"){
@@ -71,8 +75,9 @@ function displayLibrary() {
         book.appendChild(author);
         book.appendChild(pages);
         book.appendChild(isRead);
-        book.appendChild(toggleRead);
-        book.appendChild(removeBook);
+        btnContainer.appendChild(toggleRead);
+        btnContainer.appendChild(removeBook);
+        book.appendChild(btnContainer);
         book.classList.add("book");
         library.appendChild(book);
     }
