@@ -23,7 +23,7 @@ form_submit.addEventListener("click", () => {
 })
 
 function addBookToLibrary(title, author, pages, isRead) {
-    myLibrary.push(new Book(title, author, pages, isRead));
+    myLibrary.unshift(new Book(title, author, pages, isRead));
     displayLibrary();
 }
 
@@ -36,10 +36,10 @@ function displayLibrary() {
     for(let i = 0; i < myLibrary.length; i++){
         const book = document.createElement("div");
         book.innerHTML =  
-            `Title: ${myLibrary[i].title}<br>
-            Author: ${myLibrary[i].author}<br>
-            Pages: ${myLibrary[i].pages}<br>
-            Read yet? (Y/N): ${myLibrary[i].isRead}`;
+            `<span>Title:</span> ${myLibrary[i].title}
+            <span>Author:</span> ${myLibrary[i].author}
+            <span>Pages:</span> ${myLibrary[i].pages}
+            <span>Read yet?:</span> ${myLibrary[i].isRead}`;
         book.classList.add("book");
         library.appendChild(book);
     }

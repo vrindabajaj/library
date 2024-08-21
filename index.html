@@ -17,18 +17,20 @@
         <div class="library-container"></div>
         <div class="modal">
             <div class="modal-content">
+                <div class="form-container">
+                    <form id="book-info" class="book-info">
+                        <label for="title">Title</label>
+                        <input type="text" id="title" name="title">
+                        <label for="author">Author</label>
+                        <input type="text" id="author" name="author">
+                        <label for="pages">Pages</label>
+                        <input type="number" id="pages" name="pages">
+                        <label for="isRead">Have you read it?</label>
+                        <input type="checkbox" id="isRead" name="read">
+                    </form>
+                    <button class="form-submit">Add to library</button>
+                </div>
                 <span class="close">&times;</span>
-                <form id="book-info" class="book-info">
-                    <label for="title">Title</label><br>
-                    <input type="text" id="title" name="title"><br>
-                    <label for="author">Author</label><br>
-                    <input type="text" id="author" name="author"><br>
-                    <label for="pages">Pages</label><br>
-                    <input type="number" id="pages" name="pages"><br>
-                    <label for="isRead">Have you read it?</label><br>
-                    <input type="checkbox" id="isRead" name="read"><br>
-                </form>
-                <button class="form-submit">Add to library</button>
             </div>
         </div>
     </div>
